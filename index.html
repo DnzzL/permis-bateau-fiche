@@ -140,9 +140,7 @@
         }
         .score-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
 
-        /* ═══════════════════════════════════ */
-        /* LIGHT DIAGRAMS — spatial layout     */
-        /* ═══════════════════════════════════ */
+        /* Light diagrams */
         .light-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -183,7 +181,6 @@
         .bulb.g { background: var(--green); color: var(--green); }
         .bulb.w { background: #fff; color: #fff; }
         .bulb.y { background: var(--yellow); color: var(--yellow); }
-        .bulb.rg { background: conic-gradient(var(--red) 0deg 180deg, var(--green) 180deg 360deg); }
         .light-label {
             font-size: 0.72rem; color: var(--text-muted);
             margin-top: 0.5rem;
@@ -198,13 +195,6 @@
             border-radius: 2px;
             margin: 4px auto;
         }
-        .mast-line {
-            width: 3px; height: 30px;
-            background: var(--border);
-            margin: 0 auto;
-        }
-
-        /* Side lights diagram */
         .side-lights {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -212,19 +202,134 @@
             max-width: 280px;
             margin: 0.5rem auto;
         }
-        .side-lights .sl-left {
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            padding: 0.5rem;
-        }
-        .side-lights .sl-center {
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-        }
+        .side-lights .sl-left,
+        .side-lights .sl-center,
         .side-lights .sl-right {
             display: flex; flex-direction: column;
             align-items: center; justify-content: center;
             padding: 0.5rem;
+        }
+
+        /* Cardinal buoy diagrams */
+        .cardinal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .cardinal-buoy {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .cardinal-buoy .title {
+            font-size: 0.9rem; font-weight: 600;
+            margin-bottom: 0.5rem; color: var(--accent);
+        }
+        .buoy-body {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .buoy-section {
+            width: 36px; height: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .buoy-section.black { background: #1a1a2e; }
+        .buoy-section.yellow { background: #eab308; }
+        .cone {
+            width: 0; height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+        }
+        .cone.up {
+            border-bottom: 18px solid #1a1a2e;
+        }
+        .cone.down {
+            border-top: 18px solid #1a1a2e;
+        }
+        .cone-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            margin: 6px 0;
+        }
+        .cardinal-buoy .light-info {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+        .cardinal-buoy .safe-info {
+            font-size: 0.78rem;
+            color: var(--green);
+            margin-top: 0.3rem;
+            font-weight: 600;
+        }
+
+        /* Signal mast diagrams */
+        .mast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .mast-diagram {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .mast-diagram .title {
+            font-size: 0.85rem; font-weight: 600;
+            margin-bottom: 0.75rem; color: var(--accent);
+        }
+        .mast-pole {
+            width: 4px; height: 120px;
+            background: var(--border);
+            margin: 0 auto;
+            position: relative;
+            display: inline-block;
+        }
+        .mast-symbol {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .ball {
+            width: 18px; height: 18px;
+            border-radius: 50%;
+            background: #1a1a2e;
+            border: 2px solid #475569;
+        }
+        .cone-shape {
+            width: 0; height: 0;
+            border-left: 14px solid transparent;
+            border-right: 14px solid transparent;
+        }
+        .cone-shape.up { border-bottom: 22px solid #1a1a2e; }
+        .cone-shape.down { border-top: 22px solid #1a1a2e; }
+        .cylinder {
+            width: 18px; height: 22px;
+            background: #1a1a2e;
+            border: 2px solid #475569;
+            border-radius: 2px;
+        }
+        .diamond-shape {
+            width: 18px; height: 18px;
+            background: #1a1a2e;
+            border: 2px solid #475569;
+            transform: rotate(45deg);
+        }
+        .mast-diagram .meaning {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
         }
 
         .trap-box {
@@ -237,6 +342,29 @@
         }
         .trap-box strong { color: var(--red); }
 
+        .correction-box {
+            background: rgba(248, 113, 113, 0.1);
+            border: 1px solid var(--red);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+        }
+        .correction-box h4 {
+            color: var(--red);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .correction-box .q {
+            color: var(--text);
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+        }
+        .correction-box .a {
+            color: var(--green);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
             body { padding: 0.5rem; }
             .section { padding: 1rem; }
@@ -245,6 +373,8 @@
             nav { gap: 0.3rem; }
             nav a { font-size: 0.75rem; padding: 0.3rem 0.5rem; }
             .light-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+            .cardinal-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+            .mast-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
         }
         @media print {
             body { background: white; color: black; }
@@ -258,11 +388,11 @@
 
 <header>
     <h1>🚢 <span>Permis Bateau Côtier</span> — Fiche de Référence</h1>
-    <p>MAJ 15/05/2026 — Quiz 33/38 (87%) — Infos vérifiées ✅ — Objectif ≥75%</p>
+    <p>MAJ 17/05/2026 — Quiz ~35Q, 13 erreurs corrigées — Consolidé ✅</p>
 </header>
 
 <div class="update-banner">
-    <strong>✅ Vérifié</strong> — Division 240, SHOM 1D, ANFR, annales examen
+    <strong>✅ Vérifié</strong> — Division 240, SHOM 1D, ANFR, RIPAM, annales examen
 </div>
 
 <nav>
@@ -270,6 +400,8 @@
     <a href="#vhf">📻 VHF</a>
     <a href="#feux">🚢 Feux</a>
     <a href="#balisage">📍 Balisage</a>
+    <a href="#cardinales">🔶 Cardinales</a>
+    <a href="#mats">🎌 Mâts signaux</a>
     <a href="#cartes">📐 Cartes</a>
     <a href="#ripam">📏 RIPAM</a>
     <a href="#armement">⚓ Armement</a>
@@ -281,6 +413,7 @@
     <a href="#ecologie">🌿 Écologie</a>
     <a href="#mnemo">🧠 Mnémotechniques</a>
     <a href="#traps">⚠️ Pièges</a>
+    <a href="#corrections">📝 Corrections</a>
     <a href="#scores">📊 Scores</a>
 </nav>
 
@@ -291,10 +424,17 @@
     <h2>🆘 Messages de Détresse</h2>
     <table>
         <tr><th>Niveau</th><th>Mot-clé</th><th>Usage</th></tr>
-        <tr><td><span class="badge green">Sécurité</span></td><td><strong>SECURITÉ</strong> × 3</td><td>Danger navigation (conteneur dérive, météo &gt;7 Bft)</td></tr>
+        <tr><td><span class="badge green">Sécurité</span></td><td><strong>SÉCURITÉ</strong> × 3</td><td>Danger navigation (épave dérive, bouée en panne, météo &gt;7 Bft)</td></tr>
         <tr><td><span class="badge yellow">Urgence</span></td><td><strong>PAN-PAN</strong> × 3</td><td>Panne moteur, blessé — grave mais pas danger immédiat</td></tr>
         <tr><td><span class="badge red">Détresse</span></td><td><strong>MAYDAY</strong> × 3</td><td>Danger grave et imminent — <strong>TOUJOURS prioritaire</strong></td></tr>
     </table>
+
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz</h4>
+        <p class="q">Épave à la dérive → quel message ?</p>
+        <p class="a">✅ SÉCURITÉ — Ce n'est ni un danger de mort (MAYDAY) ni une urgence navire (PAN-PAN). Un obstacle à la navigation = message de sécurité.</p>
+    </div>
+
     <table>
         <tr><th>Français</th><th>English</th><th>Français</th><th>English</th></tr>
         <tr><td>Incendie</td><td>Fire</td><td>Échouement</td><td>Grounding</td></tr>
@@ -303,6 +443,7 @@
         <tr><td>Avarié</td><td>Disabled vessel</td><td>Remorquage</td><td>Towing required</td></tr>
         <tr><td>Chavirement</td><td>Listing</td><td>Abandon</td><td>Abandoning ship</td></tr>
         <tr><td>Silence MAYDAY</td><td>Seelonce mayday</td><td>Silence terminé</td><td>Seelonce feenee</td></tr>
+        <tr><td>ADrift / À la dérive</td><td>Adrift</td><td>—</td><td>—</td></tr>
     </table>
 </section>
 
@@ -323,10 +464,18 @@
         <li><strong>MMSI</strong> = numéro d'appel ASN. Transmis <strong>automatiquement</strong> avec position GPS</li>
         <li><strong>CRR</strong> obligatoire pour eaux internationales ou VHF &gt;6W/ASN en eaux territoriales</li>
         <li><strong>CROSS</strong> = écoute canal 16 jour et nuit, coordonne sauvetage, diffuse météo</li>
-        <li>Alerte ASN reçue → <strong>STOP conversation, attendre instructions CROSS</strong></li>
+        <li>Alerte ASN reçue → <strong>attendre 5 min</strong>, si CROSS n'a pas accusé réception → accuser en téléphonie</li>
         <li>BMS (Bulletin Météo Spécial) = précédé d'un message de <strong>SÉCURITÉ</strong></li>
         <li>MAYDAY = <strong>TOUJOURS prioritaire</strong> sur assistance médicale</li>
+        <li>Communication VHF = <strong>en alternance</strong> (pas en même temps)</li>
+        <li>Épellation alphabet OACI : S=Sierra, H=Hotel, A=Alfa, R=Romeo, K=Kilo</li>
     </ul>
+
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz</h4>
+        <p class="q">Alerte ASN détresse reçue → que faire ?</p>
+        <p class="a">✅ Accuser réception en téléphonie si le CROSS ne l'a pas fait dans les 5 minutes. Pas d'accusé immédiat en ASN ni en téléphonie.</p>
+    </div>
 </section>
 
 <!-- ═══════════════════════════════════════ -->
@@ -335,20 +484,20 @@
 <section class="section" id="feux">
     <h2>🚢 Feux des Navires — Vue Spatiale</h2>
     <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">
-        Disposition des feux comme vus par l'observateur. <strong>Haut = en haut du mât, Bas = plus bas. Gauche = bâbord, Droite = tribord.</strong>
+        Disposition des feux comme vus par l'observateur. <strong>Haut = en haut du mât, Bas = plus bas.</strong>
     </p>
 
     <div class="light-grid">
 
         <!-- Mouillage -->
         <div class="light-diagram">
-            <div class="title">⚓ Mouillage</div>
+            <div class="title">⚓ Au mouillage</div>
             <div class="light-stack">
                 <div class="bulb w"></div>
             </div>
             <div class="light-label">Blanc 360°</div>
             <div class="hull-line"></div>
-            <div class="light-label">Marque jour: ⬛ Boule noire</div>
+            <div class="light-label">Jour: ⬛ Boule noire</div>
         </div>
 
         <!-- Chalutier en action -->
@@ -359,9 +508,9 @@
                 <div class="light-arrow">▲ au-dessus</div>
                 <div class="bulb w"></div>
             </div>
-            <div class="light-label">🔴 en HAUT &nbsp; ⚪ en BAS</div>
+            <div class="light-label">🔴 HAUT &nbsp; ⚪ BAS</div>
             <div class="hull-line"></div>
-            <div class="light-label">Marque: 🔷🔷 2 cônes pointe ↓</div>
+            <div class="light-label">Jour: 🔷🔷 2 cônes pointe ↓</div>
         </div>
 
         <!-- Pêche non-chalut -->
@@ -372,39 +521,39 @@
                 <div class="light-arrow">▲ au-dessus</div>
                 <div class="bulb r"></div>
             </div>
-            <div class="light-label">🔴 en HAUT &nbsp; 🔴 en BAS</div>
+            <div class="light-label">🔴🔴 2 rouges verticaux</div>
             <div class="hull-line"></div>
-            <div class="light-label">Marque: 🔷🔷 2 cônes pointe ↓</div>
+            <div class="light-label">Jour: 🔷🔷 2 cônes pointe ↓</div>
         </div>
 
         <!-- Pas maître de sa manœuvre -->
         <div class="light-diagram">
-            <div class="title">🚑 Pas maître de sa manœuvre</div>
+            <div class="title">🚑 Pas maître</div>
             <div class="light-stack">
                 <div class="bulb r"></div>
-                <div class="light-arrow">▲ au-dessus</div>
+                <div class="light-arrow">▲</div>
                 <div class="bulb w"></div>
-                <div class="light-arrow">▲ au-dessus</div>
+                <div class="light-arrow">▲</div>
                 <div class="bulb r"></div>
             </div>
-            <div class="light-label">🔴 HAUT &nbsp; ⚪ MILIEU &nbsp; 🔴 BAS</div>
+            <div class="light-label">🔴⚪🔴 verticaux</div>
             <div class="hull-line"></div>
-            <div class="light-label">Marque: ⬛🔷⬛ Boule-cylindre-boule</div>
+            <div class="light-label">Jour: ⬛◆⬛ Boule-cylindre-boule</div>
         </div>
 
-        <!-- Capacité de manœuvre restreinte -->
+        <!-- Capacité restreinte -->
         <div class="light-diagram">
             <div class="title">🐌 Capacité restreinte</div>
             <div class="light-stack">
                 <div class="bulb r"></div>
-                <div class="light-arrow">▲ au-dessus</div>
+                <div class="light-arrow">▲</div>
                 <div class="bulb w"></div>
-                <div class="light-arrow">▲ au-dessus</div>
+                <div class="light-arrow">▲</div>
                 <div class="bulb r"></div>
             </div>
-            <div class="light-label">🔴 HAUT &nbsp; ⚪ MILIEU &nbsp; 🔴 BAS</div>
+            <div class="light-label">🔴⚪🔴 verticaux</div>
             <div class="hull-line"></div>
-            <div class="light-label">Marque: ⬛◆⬛ Boule-diamant-boule</div>
+            <div class="light-label">Jour: ⬛◆⬛ Boule-diamant-boule</div>
         </div>
 
         <!-- Remorqueur >200m -->
@@ -412,14 +561,14 @@
             <div class="title">🔗 Remorqueur (&gt;200m)</div>
             <div class="light-stack">
                 <div class="bulb r"></div>
-                <div class="light-arrow">▲ au-dessus</div>
+                <div class="light-arrow">▲</div>
                 <div class="bulb r"></div>
-                <div class="light-arrow">▲ au-dessus</div>
+                <div class="light-arrow">▲</div>
                 <div class="bulb r"></div>
             </div>
-            <div class="light-label">🔴 HAUT &nbsp; 🔴 MILIEU &nbsp; 🔴 BAS</div>
+            <div class="light-label">🔴🔴🔴 3 rouges</div>
             <div class="hull-line"></div>
-            <div class="light-label">Marque: 🔷🔷🔷 3 cônes</div>
+            <div class="light-label">Jour: 🔷🔷🔷 3 cônes</div>
         </div>
 
         <!-- Échoué -->
@@ -427,31 +576,24 @@
             <div class="title">🌊 Échoué</div>
             <div class="light-stack">
                 <div class="bulb r"></div>
-                <div class="light-arrow">▲ au-dessus</div>
+                <div class="light-arrow">▲</div>
                 <div class="bulb r"></div>
+                <div class="light-arrow" style="font-size:0.6rem">+ ⚪ 360° séparé</div>
             </div>
-            <div class="light-label">🔴🔴 verticaux + ⚪ 360° séparé</div>
+            <div class="light-label">🔴🔴 + ⚪ 360°</div>
             <div class="hull-line"></div>
-            <div class="light-label">Marque: ⬛⬛⬛ 3 boules noires</div>
+            <div class="light-label">Jour: ⬛⬛⬛ 3 boules</div>
         </div>
 
         <!-- Voile faisant route -->
         <div class="light-diagram">
             <div class="title">⛵ Voile faisant route</div>
             <div class="side-lights">
-                <div class="sl-left">
-                    <div class="bulb r"></div>
-                    <div class="light-label">Bâbord (gauche)</div>
-                </div>
-                <div class="sl-center">
-                    <div style="font-size:0.7rem;color:var(--text-muted)">← vue arrière</div>
-                </div>
-                <div class="sl-right">
-                    <div class="bulb g"></div>
-                    <div class="light-label">Tribord (droite)</div>
-                </div>
+                <div class="sl-left"><div class="bulb r"></div><div class="light-label">Bâbord</div></div>
+                <div class="sl-center"><div style="font-size:0.7rem;color:var(--text-muted)">← arrière</div></div>
+                <div class="sl-right"><div class="bulb g"></div><div class="light-label">Tribord</div></div>
             </div>
-            <div class="light-label">+ ⚪ blanc poupe (derrière)</div>
+            <div class="light-label">+ ⚪ blanc poupe (135°)</div>
             <div class="hull-line"></div>
             <div class="light-label">112,5° chaque côté</div>
         </div>
@@ -473,7 +615,17 @@
             </div>
             <div class="light-label">⚪ mât &nbsp; 🔴🟢 côtés &nbsp; ⚪ poupe</div>
             <div class="hull-line"></div>
-            <div class="light-label">&lt;12m: mât+poupe = ⚪ 360° regroupé</div>
+        </div>
+
+        <!-- Petit navire <7m <7kt -->
+        <div class="light-diagram" style="border-color: var(--yellow);">
+            <div class="title">🚣 &lt;7m, &lt;7 nœuds</div>
+            <div class="light-stack">
+                <div class="bulb w"></div>
+            </div>
+            <div class="light-label">⚪ Feu blanc (minimum)</div>
+            <div class="hull-line"></div>
+            <div class="light-label" style="color:var(--yellow)">⚠️ Question quiz</div>
         </div>
 
     </div>
@@ -481,20 +633,20 @@
     <h3>Angles des feux</h3>
     <table>
         <tr><th>Feu</th><th>Secteur</th></tr>
-        <tr><td>Feux de côté (rouge/vert)</td><td><strong>112,5°</strong> (de l'avant au travers + 22,5°)</td></tr>
-        <tr><td>Feu de poupe (blanc)</td><td><strong>135°</strong> (vers l'arrière)</td></tr>
-        <tr><td>Feu de tête de mât (blanc)</td><td><strong>225°</strong> (de l'avant vers chaque bord)</td></tr>
+        <tr><td>Feux de côté (rouge/vert)</td><td><strong>112,5°</strong> chacun</td></tr>
+        <tr><td>Feu de poupe (blanc)</td><td><strong>135°</strong></td></tr>
+        <tr><td>Feu de tête de mât (blanc)</td><td><strong>225°</strong></td></tr>
         <tr><td>Feu blanc mouillage</td><td><strong>360°</strong></td></tr>
     </table>
 
     <div class="trap-box">
-        <strong>⚠️ PIÈGES FRÉQUENTS :</strong><br>
-        • Chalutier = 🔴 <strong>en haut</strong> + ⚪ en bas (PAS 2 rouges !)<br>
-        • Pêche non-chalut = 🔴🔴 <strong>2 rouges verticaux</strong> (PAS rouge+blanc !)<br>
-        • Remorqueur &gt;200m = 🔴🔴🔴 <strong>3 rouges verticaux</strong><br>
-        • Pas maître = 🔴⚪🔴 (rouge-blanc-rouge, <strong>pas</strong> rouge-rouge-rouge)<br>
-        • Capacité restreinte = mêmes feux 🔴⚪🔴 mais marque DIFFÉRENTE (diamant, pas cylindre)<br>
-        • <strong>Rattrapant</strong> = voit le feu de <strong>poupe blanc</strong> en premier (pas les feux de côté)<br>
+        <strong>⚠️ PIÈGES :</strong><br>
+        • Chalutier = 🔴 <strong>en haut</strong> + ⚪ bas (PAS 2 rouges !)<br>
+        • Pêche non-chalut = 🔴🔴 2 rouges (PAS rouge+blanc !)<br>
+        • Remorqueur &gt;200m = 🔴🔴🔴 3 rouges<br>
+        • Pas maître (🔴⚪🔴) ≠ Capacité restreinte (🔴⚪🔴) → <strong>marque de jour différente</strong><br>
+        • Rattrapant = voit feu de <strong>poupe blanc</strong> d'abord<br>
+        • &lt;7m / &lt;7kt = minimum <strong>1 feu blanc</strong> (montrer à temps)<br>
         • Feu <strong>isophase</strong> = lumière = obscurité | <strong>Occultations</strong> = lumière &gt; obscurité | <strong>Éclats</strong> = lumière &lt; obscurité
     </div>
 </section>
@@ -507,17 +659,16 @@
     <h3>Latéral (sens conventionnel = entrant dans le port)</h3>
     <table>
         <tr><th>Côté</th><th>Couleur</th><th>Forme</th><th>Feu</th><th>Règle</th></tr>
-        <tr><td><strong>Tribord</strong></td><td>🟢 Vert</td><td>Cône / Triangle ↑</td><td>🟢 Vert</td><td>Laisser à tribord (passer à gauche)</td></tr>
-        <tr><td><strong>Bâbord</strong></td><td>🔴 Rouge</td><td>Cylindre / Plat</td><td>🔴 Rouge</td><td>Laisser à bâbord (passer à droite)</td></tr>
+        <tr><td><strong>Tribord</strong></td><td>🟢 Vert</td><td>Cône / Triangle ↑</td><td>🟢 Vert</td><td>Laisser à tribord</td></tr>
+        <tr><td><strong>Bâbord</strong></td><td>🔴 Rouge</td><td>Cylindre / Plat</td><td>🔴 Rouge</td><td>Laisser à bâbord</td></tr>
     </table>
 
-    <h3>Cardinal</h3>
+    <h3>Signaux de port</h3>
     <table>
-        <tr><th>Cardinale</th><th>Cônes</th><th>Couleurs</th><th>Feu</th><th>Eau saine vers…</th></tr>
-        <tr><td><strong>Nord</strong></td><td>↑↑</td><td>Noir ▲ Jaune ▼</td><td>Scintillant blanc continu (Q)</td><td>NORD</td></tr>
-        <tr><td><strong>Est</strong></td><td>Sablier (base)</td><td>Noir-Jaune-Noir</td><td>3 scintillements blancs</td><td>EST</td></tr>
-        <tr><td><strong>Sud</strong></td><td>↓↓</td><td>Jaune ▲ Noir ▼</td><td>6 scintillements + 1 long</td><td>SUD</td></tr>
-        <tr><td><strong>Ouest</strong></td><td>Sablier (pointe)</td><td>Jaune-Noir-Jaune</td><td>9 scintillements blancs</td><td>OUEST</td></tr>
+        <tr><th>Signal</th><th>Signification</th></tr>
+        <tr><td>Feux à éclats <strong>rouges</strong></td><td><strong>Danger grave</strong> — ne pas entrer</td></tr>
+        <tr><td>Feux à éclats <strong>verts</strong></td><td>Autorisation de passer</td></tr>
+        <tr><td>Flamme <strong>violette</strong> sur balise</td><td>Indique un <strong>feu</strong></td></tr>
     </table>
 
     <h3>Autres marques</h3>
@@ -529,22 +680,172 @@
         <tr><td>2 bouées noires rapprochées</td><td>Noires</td><td>—</td><td><strong>Danger nouveau grave</strong></td></tr>
     </table>
 
-    <h3>Signaux de port</h3>
-    <table>
-        <tr><th>Signal</th><th>Signification</th></tr>
-        <tr><td>Feux à éclats <strong>rouges</strong></td><td><strong>Danger grave</strong> — ne pas entrer</td></tr>
-        <tr><td>Feux à éclats <strong>verts</strong></td><td>Autorisation de passer</td></tr>
-        <tr><td>Flamme <strong>violette</strong> sur balise</td><td>Indique un <strong>feu</strong></td></tr>
-    </table>
+    <div class="correction-box">
+        <h4>⚠️ Corrections quiz</h4>
+        <p class="q">Feu blanc scintillant continu droit devant (route Ouest) ?</p>
+        <p class="a">✅ Balise d'eaux saines → eau navigable tout autour → je viens indifféremment à droite ou à gauche.</p>
+        <p class="q" style="margin-top:0.5rem">2 balises latérales devant (bâbord/tribord entrant) ?</p>
+        <p class="a">✅ Je fais route vers le port (sens entrant).</p>
+    </div>
 
     <div class="trap-box">
         <strong>⚠️ PIÈGES :</strong><br>
         • Descriptif balisage sur téléphone = ❌ PAS suffisant (&lt;6nm). Support <strong>papier obligatoire</strong><br>
         • Bouées jaunes = zone spéciale (PAS cardinale sud !)<br>
         • Interdit d'amarrer aux bouées de balisage<br>
-        • <strong>Région B</strong> (Antilles, Guyane, Saint-Pierre-et-Miquelon) = balisage latéral <strong>différent</strong> de la métropole. Corse/Réunion = pareil.<br>
-        • Lettre sur bouée dans carte (G, R…) = <strong>couleur</strong> de la bouée, PAS nature du fond
+        • <strong>Région B</strong> (Antilles, Guyane, Saint-Pierre-et-Miquelon) = balisage latéral <strong>différent</strong>. Corse/Réunion = pareil.<br>
+        • Lettre sur bouée dans carte (G, R…) = <strong>couleur</strong>, PAS nature du fond<br>
+        • Balise câble sous-marin = <strong>marque spéciale</strong> (jaune, croix)
     </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- CARDINALES VISUELLES -->
+<!-- ═══════════════════════════════════════ -->
+<section class="section" id="cardinales">
+    <h2>🔶 Balises Cardinales — Visuel</h2>
+    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">
+        Les cônes noirs <strong>pointent vers le DANGER</strong>. L'eau saine est dans la direction de la cardinale.
+    </p>
+
+    <div class="cardinal-grid">
+        <!-- Nord -->
+        <div class="cardinal-buoy">
+            <div class="title">Nord</div>
+            <div class="buoy-body">
+                <div class="cone-group">
+                    <div class="cone up"></div>
+                    <div class="cone up"></div>
+                </div>
+                <div class="buoy-section black"></div>
+                <div class="buoy-section yellow"></div>
+            </div>
+            <div class="light-info">Scintillant continu (Q)</div>
+            <div class="safe-info">Eau saine au NORD ↑</div>
+            <div style="font-size:0.72rem;color:var(--red);margin-top:0.3rem">Danger au SUD ↓</div>
+        </div>
+
+        <!-- Est -->
+        <div class="cardinal-buoy">
+            <div class="title">Est</div>
+            <div class="buoy-body">
+                <div class="cone-group">
+                    <div class="cone down"></div>
+                    <div class="cone up"></div>
+                </div>
+                <div class="buoy-section yellow"></div>
+                <div class="buoy-section black"></div>
+                <div class="buoy-section yellow"></div>
+            </div>
+            <div class="light-info">3 scintillements (Q(3))</div>
+            <div class="safe-info">Eau saine à l'EST →</div>
+            <div style="font-size:0.72rem;color:var(--red);margin-top:0.3rem">Danger à l'OUEST ←</div>
+        </div>
+
+        <!-- Sud -->
+        <div class="cardinal-buoy">
+            <div class="title">Sud</div>
+            <div class="buoy-body">
+                <div class="cone-group">
+                    <div class="cone down"></div>
+                    <div class="cone down"></div>
+                </div>
+                <div class="buoy-section yellow"></div>
+                <div class="buoy-section black"></div>
+            </div>
+            <div class="light-info">6+1 scintillements (Q(6)+LFl)</div>
+            <div class="safe-info">Eau saine au SUD ↓</div>
+            <div style="font-size:0.72rem;color:var(--red);margin-top:0.3rem">Danger au NORD ↑</div>
+        </div>
+
+        <!-- Ouest -->
+        <div class="cardinal-buoy">
+            <div class="title">Ouest</div>
+            <div class="buoy-body">
+                <div class="cone-group">
+                    <div class="cone up"></div>
+                    <div class="cone down"></div>
+                </div>
+                <div class="buoy-section black"></div>
+                <div class="buoy-section yellow"></div>
+                <div class="buoy-section black"></div>
+            </div>
+            <div class="light-info">9 scintillements (Q(9))</div>
+            <div class="safe-info">Eau saine à l'OUEST ←</div>
+            <div style="font-size:0.72rem;color:var(--red);margin-top:0.3rem">Danger à l'EST →</div>
+        </div>
+    </div>
+
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz</h4>
+        <p class="q">Balise cardinale avec noir en haut (noir ▲ jaune ▼) → danger où ?</p>
+        <p class="a">✅ Au SUD de la balise. Noir en haut = cardinale Sud → cônes pointent vers le bas (SUD) = danger au SUD.</p>
+    </div>
+
+    <div class="mnemo"><strong>💡 Montre :</strong> N=12h (0 éclats) | E=3h (3 éclats) | S=6h (6+1) | W=9h (9 éclats)</div>
+    <div class="mnemo"><strong>💡 Couleurs :</strong> Noir = zone des cônes. Nord = noir en haut | Sud = noir en bas | Est/Ouest = noir au milieu</div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- MATS DE SIGNAUX -->
+<!-- ═══════════════════════════════════════ -->
+<section class="section" id="mats">
+    <h2>🎌 Mât de Signaux — Jour</h2>
+    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">
+        Signaux hissés sur un mât à terre pour avertir les navires des conditions météo.
+    </p>
+
+    <div class="mast-grid">
+        <!-- Coup de vent toutes directions -->
+        <div class="mast-diagram">
+            <div class="title">Coup de vent / Tempête</div>
+            <div class="mast-pole">
+                <div class="mast-symbol" style="top: 20px;">
+                    <div class="cone-shape up"></div>
+                </div>
+                <div class="mast-symbol" style="top: 50px;">
+                    <div class="cone-shape up"></div>
+                </div>
+                <div class="mast-symbol" style="top: 80px;">
+                    <div class="ball"></div>
+                </div>
+            </div>
+            <div class="meaning">Toutes directions</div>
+        </div>
+
+        <!-- Coup de vent SO -->
+        <div class="mast-diagram" style="border-color: var(--yellow);">
+            <div class="title">Coup de vent SO ⚠️</div>
+            <div class="mast-pole">
+                <div class="mast-symbol" style="top: 20px;">
+                    <div class="cone-shape down"></div>
+                </div>
+                <div class="mast-symbol" style="top: 50px;">
+                    <div class="cone-shape down"></div>
+                </div>
+                <div class="mast-symbol" style="top: 80px;">
+                    <div class="ball"></div>
+                </div>
+            </div>
+            <div class="meaning">Commence dans le cadran Sud-Ouest</div>
+        </div>
+
+        <!-- Saute de vent -->
+        <div class="mast-diagram">
+            <div class="title">Saute de vent</div>
+            <div class="mast-pole">
+                <div class="mast-symbol" style="top: 30px;">
+                    <div class="cone-shape up"></div>
+                </div>
+                <div class="mast-symbol" style="top: 70px;">
+                    <div class="cone-shape down"></div>
+                </div>
+            </div>
+            <div class="meaning">Changement sens horaire</div>
+        </div>
+    </div>
+
+    <div class="mnemo"><strong>💡 Cône pointe en haut</strong> = Nord | <strong>Cône pointe en bas</strong> = Sud. La position de la boule indique le début.</div>
 </section>
 
 <!-- ═══════════════════════════════════════ -->
@@ -560,6 +861,8 @@
         <tr><td><code><u>Wk</u></code></td><td>Épave <strong>découvrante</strong></td></tr>
         <tr><td><code>PA</code></td><td>Position approximative</td></tr>
         <tr><td><code>ED</code></td><td>Existence douteuse</td></tr>
+        <tr><td><code>⊥</code> / ancre</td><td>Balise fixée au fond (par le fond)</td></tr>
+        <tr><td>Rocher isolé</td><td>Roche à fleur d'eau à marée basse (découvrante)</td></tr>
     </table>
     <div class="alert">
         <strong>⚠️ CALCUL :</strong> Hauteur d'eau = Sonde carte + Hauteur de marée<br>
@@ -589,23 +892,40 @@
         <tr><td>Rattrapage</td><td>Celui qui <strong>dépasse cède TOUJOURS</strong></td></tr>
         <tr><td>Voiliers, amures différentes</td><td><strong>Bâbord amure</strong> cède</td></tr>
         <tr><td>Voiliers, même amure</td><td>Voilier <strong>au vent</strong> cède</td></tr>
-        <tr><td>Voile vs Moteur</td><td><strong>Moteur</strong> cède au voilier</td></tr>
+        <tr><td>Voile vs Moteur</td><td><strong>Moteur cède au voilier</strong></td></tr>
     </table>
+
+    <h3>Sons en mer (RIPAM)</h3>
+    <table>
+        <tr><th>Signal</th><th>Signification</th></tr>
+        <tr><td><strong>1 bref</strong></td><td>Je viens à <strong>tribord</strong></td></tr>
+        <tr><td><strong>2 brefs</strong></td><td>Je viens à <strong>bâbord</strong></td></tr>
+        <tr><td><strong>3 brefs</strong></td><td>Machine en <strong>arrière</strong></td></tr>
+        <tr><td><strong>5 brefs</strong></td><td><strong>Je ne comprends pas</strong> vos intentions</td></tr>
+        <tr><td><strong>1 prolongé</strong> (&gt;2s)</td><td>Je viens / navire en marche</td></tr>
+        <tr><td><strong>2 prolongés</strong></td><td>Navire <strong>ne gouverne pas</strong></td></tr>
+        <tr><td><strong>2 prol. + 2 brefs</strong></td><td>Je compte vous <strong>dépasser sur votre bâbord</strong></td></tr>
+        <tr><td><strong>2 prol. + 1 bref</strong></td><td>Je compte vous <strong>dépasser sur votre tribord</strong></td></tr>
+    </table>
+
+    <div class="correction-box">
+        <h4>⚠️ Corrections quiz</h4>
+        <p class="q">Chenal étroit : « 2 sons prolongés + 2 brefs » par navire qui rattrape ?</p>
+        <p class="a">✅ Je compte vous dépasser sur votre <strong>bâbord</strong>. (2 prol. = je manœuvre, 2 brefs = bâbord)</p>
+        <p class="q" style="margin-top:0.5rem">Voilier vs moteur, routes de collision ?</p>
+        <p class="a">✅ Le <strong>voilier est privilégié</strong>. Le moteur doit s'écarter.</p>
+        <p class="q" style="margin-top:0.5rem">Navire privilégié dispensé de manœuvrer si l'autre ne modifie pas sa route ?</p>
+        <p class="a">✅ <strong>Non</strong> — Le privilégié doit aussi manœuvrer si le cédant ne le fait pas.</p>
+    </div>
 
     <div class="trap-box">
         <strong>⚠️ PIÈGES :</strong><br>
         • Chenal étroit : navire à <strong>propulsion mécanique</strong> = privilégié (PAS le voilier !)<br>
         • Navire avec <strong>boule noire</strong> droit devant = navire au mouillage → <strong>je manœuvre</strong><br>
         • Rattrapant : voit le feu de <strong>poupe blanc</strong> en premier<br>
-        • Veille visuelle/auditive = <strong>permanente, AUCUNE exception</strong> (même avec radar/GPS)
+        • Veille visuelle/auditive = <strong>permanente, AUCUNE exception</strong> (même avec pilote auto/radar/GPS)<br>
+        • <strong>Pilote automatique</strong> ≠ dispense de veille visuelle
     </div>
-
-    <h3>Engins pneumatiques tractés</h3>
-    <ul>
-        <li>Navire tracteur : <strong>flamme fluorescente orange de 2 mètres</strong></li>
-        <li>Personnes sur l'engin : gilet <strong>50N minimum</strong></li>
-        <li>Ski nautique : <strong>2 personnes minimum</strong> à bord (pilote + surveillant)</li>
-    </ul>
 </section>
 
 <!-- ═══════════════════════════════════════ -->
@@ -613,6 +933,13 @@
 <!-- ═══════════════════════════════════════ -->
 <section class="section" id="armement">
     <h2>⚓ Armement — Division 240</h2>
+
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz</h4>
+        <p class="q">Bateau plaisance moteur in-board (toute puissance) : dispositif lutte incendie obligatoire ?</p>
+        <p class="a">✅ <strong>VRAI</strong> — Tout moteur in-board nécessite un dispositif de lutte contre l'incendie, quelle que soit sa puissance.</p>
+    </div>
+
     <table>
         <tr><th>Équipement</th><th>&lt;2M</th><th>2-6M</th><th>6-60M</th><th>60M+</th></tr>
         <tr><td>Gilet × personnes</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
@@ -629,15 +956,21 @@
         <tr><td>Radiobalise</td><td></td><td></td><td></td><td>✅</td></tr>
     </table>
 
+    <div class="alert">
+        <strong>📌 Matériel côtier (2-6M)</strong> = navigation jusqu'à <strong>6 milles</strong> d'un abri.<br>
+        Le matériel d'armement de base autorise la navigation côtière jusqu'à 6 milles d'un abri.
+    </div>
+
     <div class="trap-box">
         <strong>⚠️ PIÈGES :</strong><br>
-        • <strong>Brassières</strong> : 1 par personne. Si &lt; personnes à bord → <strong>interdit de prendre la mer</strong> (même à &lt;2M)<br>
+        • <strong>Brassières</strong> : 1 par personne. Si &lt; personnes à bord → <strong>interdit de prendre la mer</strong><br>
         • <strong>Extincteurs</strong> : périodicité contrôles = <strong>notice du constructeur</strong> (pas de règle fixe 1 an ou 2 ans)<br>
         • <strong>Compas</strong> : visible du poste de pilotage, PAS remplaçable par boussole à aiguille<br>
         • Charge max CE = <strong>plaque constructeur</strong><br>
         • RVS = obligatoire de le consulter (navire loué)<br>
         • Peinture antisalissure à l'étain = <strong>interdite en aucun cas</strong><br>
-        • Carénage = zone <strong>réglementée</strong> uniquement
+        • Carénage = zone <strong>réglementée</strong> uniquement<br>
+        • Dispositif lutte incendie = <strong>obligatoire pour tout in-board</strong> (toute puissance)
     </div>
 </section>
 
@@ -660,12 +993,27 @@
 <section class="section" id="vnm">
     <h2>🚤 VNM & Pêche Sous-Marine</h2>
     <table>
-        <tr><th>Règle</th><th>VNM</th><th>Pêche sous-marine</th></tr>
-        <tr><td>Nuit</td><td>❌ Jamais</td><td>❌ Interdit</td></tr>
-        <tr><td>Jour</td><td>✅ Permis requis</td><td>✅ Autorisé</td></tr>
-        <tr><td>Respiratoire</td><td>—</td><td>❌ Interdit (tubée uniquement)</td></tr>
-        <tr><td>Zone 300m</td><td>Max 5 nœuds, excès = retrait permis</td><td>—</td></tr>
+        <tr><th>Règle</th><th>Détail</th></tr>
+        <tr><td>Nuit</td><td>❌ Jamais (VNM ni pêche sous-marine)</td></tr>
+        <tr><td>Jour</td><td>✅ Permis requis</td></tr>
+        <tr><td>Respiratoire</td><td>❌ Interdit (tubée uniquement)</td></tr>
+        <tr><td>Zone 300m</td><td>Max 5 nœuds, excès = retrait permis</td></tr>
+        <tr><td>VNM pilote assis</td><td><strong>Max 2 milles</strong> de la côte</td></tr>
+        <tr><td>VNM pilote debout</td><td>Max 1 mille de la côte</td></tr>
     </table>
+
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz</h4>
+        <p class="q">VNM avec pilote en position assise → distance max de la côte ?</p>
+        <p class="a">✅ <strong>2 milles</strong>. (Pilote debout = 1 mille)</p>
+    </div>
+
+    <h3>Engins pneumatiques tractés</h3>
+    <ul>
+        <li>Navire tracteur : <strong>flamme fluorescente orange de 2 mètres</strong></li>
+        <li>Personnes sur l'engin : gilet <strong>50N minimum</strong></li>
+        <li>Ski nautique : <strong>2 personnes minimum</strong> à bord (pilote + surveillant)</li>
+    </ul>
 </section>
 
 <!-- ═══════════════════════════════════════ -->
@@ -694,9 +1042,15 @@
         <tr><td>6</td><td><strong>Forte brise</strong></td><td>22-27</td></tr>
         <tr><td>7</td><td>Grand frais</td><td>28-33</td></tr>
         <tr><td><strong>8</strong></td><td><strong style="color:var(--orange)">Coup de vent</strong></td><td>34-40</td></tr>
-        <tr><td>10</td><td><strong>Tempête</strong></td><td>48-55</td></tr>
+        <tr><td><strong>10</strong></td><td><strong style="color:var(--red)">Tempête</strong></td><td>48-55</td></tr>
         <tr><td>12</td><td>Ouragan</td><td>≥ 64</td></tr>
     </table>
+
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz</h4>
+        <p class="q">Beaufort force 10 = ?</p>
+        <p class="a">✅ <strong>Tempête</strong> (48-55 nœuds). Force 8 = coup de vent, force 12 = ouragan.</p>
+    </div>
 
     <h3>Vents méditerranéens</h3>
     <table>
@@ -707,11 +1061,25 @@
         <tr><td>Sirocco</td><td>Sud</td><td>Chaud, sableux</td></tr>
         <tr><td>Levant</td><td>Est</td><td>Humide</td></tr>
     </table>
+
+    <h3>État de la mer</h3>
+    <table>
+        <tr><th>Qualificatif</th><th>Vagues</th></tr>
+        <tr><td>Belle</td><td>0 - 0,10 m</td></tr>
+        <tr><td>Peu agitée</td><td>0,10 - 0,50 m</td></tr>
+        <tr><td><strong>Agitée</strong></td><td><strong>0,50 - 1,25 m</strong></td></tr>
+        <tr><td>Forte</td><td>1,25 - 2,50 m</td></tr>
+        <tr><td>Très forte</td><td>2,50 - 4 m</td></tr>
+        <tr><td>Énorme</td><td>4 - 6 m</td></tr>
+    </table>
+
     <div class="trap-box">
         <strong>⚠️ PIÈGES :</strong><br>
+        • Beaufort 8 = <strong>Coup de vent</strong> (≠ tempête !) | 10 = <strong>Tempête</strong><br>
         • <strong>Jusant</strong> ≠ vent ! = courant de marée <strong>descendant</strong><br>
-        • <strong>« La mer moutonne »</strong> = vagues formées par le vent<br>
-        • Consommation carburant = plus importante <strong>face aux vagues</strong> (pas face au vent)<br>
+        • Mer <strong>agité</strong>e = 0,50 - 1,25m (≠ 1,25-2,50 = forte !)<br>
+        • « La mer moutonne » = vagues formées par le vent<br>
+        • Consommation carburant = plus importante <strong>face aux vagues</strong><br>
         • BMS = précédé de message <strong>SÉCURITÉ</strong>
     </div>
 </section>
@@ -723,25 +1091,39 @@
     <h2>🌙 Marées</h2>
     <table>
         <tr><th>Terme</th><th>Définition</th></tr>
-        <tr><td><strong>Marnage</strong></td><td>Différence entre <strong>pleine mer</strong> et <strong>basse mer</strong> consécutive ✅</td></tr>
-        <tr><td><strong>Flot</strong></td><td>Marée montante</td></tr>
-        <tr><td><strong>Jusant</strong></td><td>Marée descendante</td></tr>
+        <tr><td><strong>Marnage</strong></td><td>Différence entre <strong>pleine mer</strong> et <strong>basse mer</strong> consécutive</td></tr>
+        <tr><td><strong>Flot</strong></td><td>Marée <strong>montante</strong> ↑</td></tr>
+        <tr><td><strong>Jusant</strong></td><td>Marée <strong>descendante</strong> ↓</td></tr>
         <tr><td><strong>Vives-eaux</strong></td><td>Grande amplitude (coeff &gt;70)</td></tr>
         <tr><td><strong>Mortes-eaux</strong></td><td><strong>Marnage faible</strong> (coeff &lt;45)</td></tr>
     </table>
+
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz</h4>
+        <p class="q">Jusant = ?</p>
+        <p class="a">✅ Période pendant laquelle la mer <strong>descend</strong>. (Flot = mer monte)</p>
+    </div>
+
     <div class="mnemo"><strong>💡</strong> Vives-eaux = profondeurs <strong>+</strong> fortes à PM, <strong>−</strong> importantes à BM</div>
 </section>
 
 <!-- ═══════════════════════════════════════ -->
-<!-- ÉCOLOGIE -->
+<!-- ÉCOLOGIE / PÊCHE -->
 <!-- ═══════════════════════════════════════ -->
 <section class="section" id="ecologie">
-    <h2>🌿 Écologie</h2>
+    <h2>🌿 Écologie & Pêche de loisir</h2>
     <ul>
         <li>Peinture antisalissure à l'étain = ❌ <strong>Interdite en aucun cas</strong></li>
         <li>Carénage = zone <strong>réglementée</strong> uniquement</li>
         <li>Eaux noires = vidanger aux <strong>bornes à terre</strong></li>
+        <li>Pêche loisir : pour certaines espèces, couper la <strong>partie inférieure de la queue</strong> du poisson/crustacé</li>
     </ul>
+
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz</h4>
+        <p class="q">En pêche de loisir, que doit-on couper sur certaines espèces ?</p>
+        <p class="a">✅ La <strong>partie inférieure de la queue</strong> du poisson ou du crustacé.</p>
+    </div>
 </section>
 
 <!-- ═══════════════════════════════════════ -->
@@ -759,7 +1141,10 @@
         <div class="card"><h4>Rattrapage</h4><p>Celui qui <strong>dépasse cède TOUJOURS</strong></p></div>
         <div class="card"><h4>Vives-eaux</h4><p><strong>V</strong>ives = <strong>V</strong>astes amplitudes</p></div>
         <div class="card"><h4>Feux</h4><p>Oc = lumière + longue | Fl = lumière + courte</p></div>
-        <div class="card"><h4>Beaufort</h4><p>F6=Fort brise | F8=<strong>Coup de vent</strong> | F10=Tempête</p></div>
+        <div class="card"><h4>Beaufort</h4><p>F6=Fort brise | F8=Coup de vent | F10=Tempête</p></div>
+        <div class="card"><h4>Sons RIPAM</h4><p>2 prol.+2 brefs = dép. <strong>bâbord</strong> | 2 prol.+1 bref = dép. <strong>tribord</strong></p></div>
+        <div class="card"><h4>Marées</h4><p><strong>Flot</strong> = monte ↑ | <strong>Jusant</strong> = descend ↓</p></div>
+        <div class="card"><h4>VNM</h4><p>Assis = <strong>2M</strong> | Debout = <strong>1M</strong></p></div>
     </div>
 </section>
 
@@ -772,24 +1157,29 @@
         <strong>🔴 Feux — Confusions fréquentes :</strong><br>
         • Chalutier = 🔴<strong>en haut</strong> + ⚪ bas (≠ 2 rouges)<br>
         • Pêche non-chalut = 🔴🔴 (≠ rouge+blanc)<br>
-        • Remorqueur >200m = 🔴🔴🔴 3 rouges (≠ 2)<br>
-        • Pas maître (🔴⚪🔴) ≠ Capacité restreinte (🔴⚪🔴) → différencier par la <strong>marque de jour</strong><br>
+        • Remorqueur &gt;200m = 🔴🔴🔴 3 rouges (≠ 2)<br>
+        • Pas maître (🔴⚪🔴) ≠ Capacité restreinte (🔴⚪🔴) → <strong>marque de jour différente</strong><br>
         • Rattrapant voit le feu de <strong>poupe blanc</strong> (pas les côtés)<br>
-        • Voile &lt;12m : feu mât + poupe = <strong>⚪ 360° regroupé</strong> = VRAI
+        • &lt;7m / &lt;7kt = minimum <strong>1 feu blanc</strong><br>
+        • Secteur feu tribord = <strong>112,5°</strong> | poupe = <strong>135°</strong> | mât = <strong>225°</strong>
     </div>
     <div class="trap-box">
         <strong>🔴 VHF/ASN :</strong><br>
         • MMSI transmis <strong>automatiquement</strong> (pas oralement !)<br>
-        • Alerte ASN reçue = <strong>STOP</strong>, attendre CROSS (pas finir la conversation !)<br>
+        • Alerte ASN reçue → <strong>attendre 5 min</strong>, accuser si CROSS pas fait<br>
+        • Épave dérive = <strong>SÉCURITÉ</strong> (pas MAYDAY ni PAN-PAN)<br>
+        • Communication = <strong>en alternance</strong> (pas en même temps)<br>
         • CRR obligatoire à l'<strong>étranger</strong> (même VHF portable)<br>
         • MAYDAY = <strong>TOUJOURS prioritaire</strong> sur urgence médicale
     </div>
     <div class="trap-box">
         <strong>🔴 Armement/Annexes :</strong><br>
-        • Annexe >300m = <strong>moyen repérage lumineux</strong> (PAS armement complet !)<br>
-        • Extincteurs = périodicité selon <strong>notice constructeur</strong> (pas 1 ou 2 ans)<br>
+        • Annexe &gt;300m = <strong>moyen repérage lumineux</strong> (PAS armement complet !)<br>
+        • Extincteurs = périodicité selon <strong>notice constructeur</strong><br>
         • Brassières &lt; personnes à bord = <strong>interdit</strong> de partir<br>
-        • Compas = visible du poste de pilotage, PAS boussole à aiguille
+        • Compas = visible du poste de pilotage<br>
+        • Dispositif incendie = obligatoire pour tout <strong>in-board</strong><br>
+        • Côtier (2-6M) = navigation jusqu'à <strong>6 milles</strong> d'un abri
     </div>
     <div class="trap-box">
         <strong>🔴 Balisage/Cartes :</strong><br>
@@ -799,16 +1189,55 @@
         • Antilles/Guyane/SPM = balisage latéral <strong>différent</strong><br>
         • Lettre sur bouée (G, R) = <strong>couleur</strong> (≠ nature du fond)<br>
         • Flamme violette = <strong>feu</strong><br>
-        • Amarrer aux bouées = <strong>interdit</strong>
+        • Amarrer aux bouées = <strong>interdit</strong><br>
+        • Eaux saines = navigable des 2 côtés → cap indifférent<br>
+        • <strong>Cardinale Sud</strong> = noir en bas → danger au NORD | noir en haut = danger au SUD
     </div>
     <div class="trap-box">
-        <strong>🔴 Météo/RIPAM :</strong><br>
-        • Beaufort 8 = <strong>Coup de vent</strong> (≠ tempête !)<br>
-        • Jusant = courant <strong>descendant</strong> (≠ vent)<br>
+        <strong>🔴 RIPAM/Sons :</strong><br>
+        • Beaufort 8 = <strong>Coup de vent</strong> | 10 = <strong>Tempête</strong><br>
+        • 2 prol.+2 brefs = dép. <strong>bâbord</strong> | 2 prol.+1 bref = dép. <strong>tribord</strong><br>
+        • Voilier vs moteur = <strong>voilier privilégié</strong><br>
         • Chenal étroit = <strong>propulsion mécanique</strong> privilégié (≠ voile !)<br>
-        • Veille visuelle/auditive = <strong>aucune exception</strong><br>
-        • BMS = message de <strong>SÉCURITÉ</strong>
+        • Veille visuelle = <strong>aucune exception</strong> (pilote auto ≠ dispense)<br>
+        • Privilégié = <strong>JAMAIS dispensé</strong> de manœuvrer si autre ne cède pas<br>
+        • Cap inverse = 360° - cap actuel (300° → 120°)
     </div>
+    <div class="trap-box">
+        <strong>🔴 VNM/Pêche/Écologie :</strong><br>
+        • VNM assis = <strong>2 milles</strong> max | debout = <strong>1 mille</strong><br>
+        • Pêche loisir = couper <strong>partie inférieure queue</strong><br>
+        • Carénage = zone réglementée uniquement<br>
+        • Mer agitée = <strong>0,50 - 1,25m</strong> (pas 1,25-2,50)
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- CORRECTIONS DU QUIZ -->
+<!-- ═══════════════════════════════════════ -->
+<section class="section" id="corrections">
+    <h2>📝 Corrections — Quiz 17/05/2026</h2>
+    <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem;">~35 questions, 13 erreurs identifiées et corrigées ci-dessous.</p>
+
+    <table>
+        <tr><th>#</th><th>Question</th><th>Correction ✅</th><th>Catégorie</th></tr>
+        <tr><td>1</td><td>Épave à la dérive → message ?</td><td><strong>SÉCURITÉ</strong></td><td>VHF</td></tr>
+        <tr><td>2</td><td>Chenal étroit : 2 prol. + 2 brefs</td><td><strong>Dépassement bâbord</strong></td><td>RIPAM</td></tr>
+        <tr><td>3</td><td>Moteur in-board → incendie obligatoire ?</td><td><strong>VRAI</strong></td><td>Armement</td></tr>
+        <tr><td>4</td><td>Beaufort force 10</td><td><strong>Tempête</strong></td><td>Météo</td></tr>
+        <tr><td>5</td><td>Feu blanc scintillant continu (route Ouest)</td><td><strong>Cap indifférent</strong> (eaux saines)</td><td>Balisage</td></tr>
+        <tr><td>6</td><td>Jusant</td><td><strong>Mer descend</strong></td><td>Marée</td></tr>
+        <tr><td>7</td><td>Navire : 1 feu blanc 360°</td><td><strong>Au mouillage</strong></td><td>Feux</td></tr>
+        <tr><td>8</td><td>Voilier vs moteur collision</td><td><strong>Voilier privilégié</strong></td><td>RIPAM</td></tr>
+        <tr><td>9</td><td>Alerte ASN détresse</td><td><strong>Accuser si CROSS pas fait en 5 min</strong></td><td>VHF</td></tr>
+        <tr><td>10</td><td>VNM pilote assis → distance max</td><td><strong>2 milles</strong></td><td>VNM</td></tr>
+        <tr><td>11</td><td>Cloche ~1min (visibilité réduite)</td><td><strong>Navire au mouillage &lt;100m</strong></td><td>S. Phoniques</td></tr>
+        <tr><td>12</td><td>Cardinale noir en haut → danger ?</td><td><strong>Au SUD</strong></td><td>Balisage</td></tr>
+        <tr><td>13</td><td>Pêche loisir : que couper ?</td><td><strong>Partie inférieure queue</strong></td><td>Écologie</td></tr>
+        <tr><td>14</td><td>&lt;7m, &lt;7kt → feu minimum</td><td><strong>Feu blanc</strong></td><td>Feux</td></tr>
+        <tr><td>15</td><td>Mât signaux : boules + cônes ↓↓</td><td><strong>Coup de vent SO</strong></td><td>Météo</td></tr>
+        <tr><td>16</td><td>2 balises latérales devant</td><td><strong>Route vers le port</strong></td><td>Balisage</td></tr>
+    </table>
 </section>
 
 <!-- ═══════════════════════════════════════ -->
@@ -833,13 +1262,18 @@
 
     <h3>Quiz 15/05/2026 : 33/38 (87%) 🎉</h3>
     <div class="alert green">
-        <strong>5 erreurs corrigées :</strong> Beaufort 8 (coup de vent), Annexe >300m (repérage lumineux), Extincteurs (notice constructeur), ASN MMSI (automatique), Engin tracté (flamme orange 2m ⚠️ quiz discrépance)
+        <strong>5 erreurs corrigées :</strong> Beaufort 8 (coup de vent), Annexe >300m (repérage lumineux), Extincteurs (notice constructeur), ASN MMSI (automatique), Engin tracté
+    </div>
+
+    <h3>Quiz 17/05/2026 : ~35Q, 13 erreurs</h3>
+    <div class="alert yellow">
+        <strong>Points faibles identifiés :</strong> VHF (épave dérive=SÉCURITÉ, ASN 5min), RIPAM (sons chenal, voile vs moteur), Balisage (cardinales, eaux saines), Météo (Beaufort 10, mât signaux), Feux (&lt;7m), VNM (2M assis)
     </div>
 </section>
 
 <footer style="text-align:center;padding:2rem 0;color:var(--text-muted);font-size:0.8rem;border-top:1px solid var(--border);">
-    <p>Permis Bateau Côtier — Fiche de Référence — MAJ 15/05/2026</p>
-    <p>Sources : Division 240, SHOM 1D, ANFR, lavoilepourlesnuls.com, annales examen</p>
+    <p>Permis Bateau Côtier — Fiche de Référence — MAJ 17/05/2026</p>
+    <p>Sources : Division 240, SHOM 1D, ANFR, RIPAM, lavoilepourlesnuls.com, annales examen</p>
 </footer>
 
 </div>
