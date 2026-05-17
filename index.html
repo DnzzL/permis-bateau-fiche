@@ -388,7 +388,7 @@
 
 <header>
     <h1>🚢 <span>Permis Bateau Côtier</span> — Fiche de Référence</h1>
-    <p>MAJ 17/05/2026 — Quiz ~35Q, 13 erreurs corrigées — Consolidé ✅</p>
+    <p>MAJ 17/05/2026 — Quiz #3 ~40Q, 6 erreurs — Consolidé ✅</p>
 </header>
 
 <div class="update-banner">
@@ -414,7 +414,6 @@
     <a href="#mnemo">🧠 Mnémotechniques</a>
     <a href="#traps">⚠️ Pièges</a>
     <a href="#corrections">📝 Corrections</a>
-    <a href="#scores">📊 Scores</a>
 </nav>
 
 <!-- ═══════════════════════════════════════ -->
@@ -476,6 +475,18 @@
         <p class="q">Alerte ASN détresse reçue → que faire ?</p>
         <p class="a">✅ Accuser réception en téléphonie si le CROSS ne l'a pas fait dans les 5 minutes. Pas d'accusé immédiat en ASN ni en téléphonie.</p>
     </div>
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz #3</h4>
+        <p class="q">VHF non ASN 25W installée (premier équipement radio) → licence ?</p>
+        <p class="a">✅ <strong>Licence obligatoire</strong>. Toute installation VHF (même non ASN, même sans MMSI) nécessite une licence de station de navire.</p>
+    </div>
+
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz #3</h4>
+        <p class="q">Navires de plaisance de moins de 24m → SMDSM ?</p>
+        <p class="a">✅ <strong>Non astreints au SMDSM</strong> (ni en France ni à l'étranger).</p>
+    </div>
+
 </section>
 
 <!-- ═══════════════════════════════════════ -->
@@ -712,6 +723,12 @@
         <!-- Nord -->
         <div class="cardinal-buoy">
             <div class="title">Nord</div>
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz #3</h4>
+        <p class="q">Bateau qui sort du port → passe-t-il du bon côté de la balise ?</p>
+        <p class="a">✅ <strong>Mauvais côté</strong>. Le sens conventionnel du balisage latéral est l'<strong>entrant</strong> (vers le port). Un bateau qui sort doit inverser : rouge à tribord, vert à bâbord. S'il suit les règles de l'entrant, il passe du mauvais côté.</p>
+    </div>
+
             <div class="buoy-body">
                 <div class="cone-group">
                     <div class="cone up"></div>
@@ -939,6 +956,12 @@
         <p class="q">Bateau plaisance moteur in-board (toute puissance) : dispositif lutte incendie obligatoire ?</p>
         <p class="a">✅ <strong>VRAI</strong> — Tout moteur in-board nécessite un dispositif de lutte contre l'incendie, quelle que soit sa puissance.</p>
     </div>
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz #3</h4>
+        <p class="q">Bateau pilote dans la brume = 4 sons brefs ?</p>
+        <p class="a">✅ <strong>FAUX</strong>. Un pilote en service émet <strong>4 sons brefs</strong> MAIS ce signal n'est pas standard RIPAM pour identification dans la brume. Dans la brume, un pilote fait 1 son prolongé + 2 brefs toutes les 2 min. 4 sons brefs n'est pas un signal réglementaire.</p>
+    </div>
+
 
     <table>
         <tr><th>Équipement</th><th>&lt;2M</th><th>2-6M</th><th>6-60M</th><th>60M+</th></tr>
@@ -955,6 +978,12 @@
         <tr><td>GPS</td><td></td><td></td><td>✅</td><td>✅</td></tr>
         <tr><td>Radiobalise</td><td></td><td></td><td></td><td>✅</td></tr>
     </table>
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz #3</h4>
+        <p class="q">Dispositif de repérage et d'assistance pour une personne tombée à l'eau obligatoire dans armement ?</p>
+        <p class="a">✅ <strong>Basique</strong>. Ce dispositif fait partie du matériel d'armement de <strong>base</strong> (obligatoire dès le premier niveau), pas seulement côtier.</p>
+    </div>
+
 
     <div class="alert">
         <strong>📌 Matériel côtier (2-6M)</strong> = navigation jusqu'à <strong>6 milles</strong> d'un abri.<br>
@@ -1105,6 +1134,12 @@
     </div>
 
     <div class="mnemo"><strong>💡</strong> Vives-eaux = profondeurs <strong>+</strong> fortes à PM, <strong>−</strong> importantes à BM</div>
+    <div class="correction-box">
+        <h4>⚠️ Correction quiz #3</h4>
+        <p class="q">Tirant d'eau 1m + marge sécurité 0.50m, sonde 2m → hauteur d'eau nécessaire ?</p>
+        <p class="a">✅ <strong>2 mètres</strong>. Profondeur requise = tirant d'eau (1m) + marge (0.50m) = 1.50m. Avec une sonde de 2m au zéro des cartes, il faut que hauteur de marée ≥ 0m (la sonde de 2m couvre déjà le besoin).</p>
+    </div>
+
 </section>
 
 <!-- ═══════════════════════════════════════ -->
@@ -1153,7 +1188,14 @@
 <!-- ═══════════════════════════════════════ -->
 <section class="section" id="traps">
     <h2>⚠️ Top Pièges de l'Examen</h2>
+    
     <div class="trap-box">
+        <strong>🔴 VHF/SMDSM :</strong><br>
+        • Navires plaisance &lt;24m = <strong>pas astreints au SMDSM</strong><br>
+        • VHF non ASN 25W = <strong>licence obligatoire</strong> (même sans MMSI)<br>
+        • VHF ASN = MMSI programmé sur la VHF uniquement (pas téléphone)
+    </div>
+<div class="trap-box">
         <strong>🔴 Feux — Confusions fréquentes :</strong><br>
         • Chalutier = 🔴<strong>en haut</strong> + ⚪ bas (≠ 2 rouges)<br>
         • Pêche non-chalut = 🔴🔴 (≠ rouge+blanc)<br>
@@ -1237,38 +1279,14 @@
         <tr><td>14</td><td>&lt;7m, &lt;7kt → feu minimum</td><td><strong>Feu blanc</strong></td><td>Feux</td></tr>
         <tr><td>15</td><td>Mât signaux : boules + cônes ↓↓</td><td><strong>Coup de vent SO</strong></td><td>Météo</td></tr>
         <tr><td>16</td><td>2 balises latérales devant</td><td><strong>Route vers le port</strong></td><td>Balisage</td></tr>
+    
+        <tr><td>17</td><td>VHF non ASN 25W, aucun équipement → licence ?</td><td><strong>Licence obligatoire</strong></td><td>VHF</td></tr>
+        <tr><td>18</td><td>Repérage/assistance personne à l'eau → armement ?</td><td><strong>Basique</strong></td><td>Armement</td></tr>
+        <tr><td>19</td><td>Bateau sort du port → bon/mauvais côté balise ?</td><td><strong>Mauvais côté</strong></td><td>Balisage</td></tr>
+        <tr><td>20</td><td>Plaisance &lt;24m → SMDSM ?</td><td><strong>Pas astreints</strong></td><td>VHF</td></tr>
+        <tr><td>21</td><td>Pilote brume = 4 sons brefs ?</td><td><strong>FAUX</strong></td><td>S. Phoniques</td></tr>
+        <tr><td>22</td><td>Tirant d'eau 1m + marge 0.50m, sonde 2m → hauteur d'eau ?</td><td><strong>2 mètres</strong></td><td>Marée</td></tr>
     </table>
-</section>
-
-<!-- ═══════════════════════════════════════ -->
-<!-- SCORES -->
-<!-- ═══════════════════════════════════════ -->
-<section class="section" id="scores">
-    <h2>📊 Suivi des Scores</h2>
-    <h3>Mock 10/05/2026</h3>
-    <table>
-        <tr><th>Catégorie</th><th>Score</th><th>Barre</th></tr>
-        <tr><td>VHF</td><td>55% <span class="badge red">🔴</span></td><td><div class="score-bar"><div class="score-fill" style="width:55%;background:var(--red)"></div></div></td></tr>
-        <tr><td>Balisage</td><td>55% <span class="badge red">🔴</span></td><td><div class="score-bar"><div class="score-fill" style="width:55%;background:var(--red)"></div></div></td></tr>
-        <tr><td>Armement</td><td>75% <span class="badge yellow">⚠️</span></td><td><div class="score-bar"><div class="score-fill" style="width:75%;background:var(--yellow)"></div></div></td></tr>
-        <tr><td>Signaux phoniques</td><td>77% <span class="badge yellow">⚠️</span></td><td><div class="score-bar"><div class="score-fill" style="width:77%;background:var(--yellow)"></div></div></td></tr>
-        <tr><td>Feux</td><td>80% <span class="badge yellow">⚠️</span></td><td><div class="score-bar"><div class="score-fill" style="width:80%;background:var(--yellow)"></div></div></td></tr>
-        <tr><td>Carte météo</td><td>86% <span class="badge green">✅</span></td><td><div class="score-bar"><div class="score-fill" style="width:86%;background:var(--green)"></div></div></td></tr>
-        <tr><td>Règles</td><td>93% <span class="badge green">✅</span></td><td><div class="score-bar"><div class="score-fill" style="width:93%;background:var(--green)"></div></div></td></tr>
-        <tr><td>Vitesse/Pêche</td><td>100% <span class="badge green">✅</span></td><td><div class="score-bar"><div class="score-fill" style="width:100%;background:var(--green)"></div></div></td></tr>
-        <tr><td>Marée</td><td>100% <span class="badge green">✅</span></td><td><div class="score-bar"><div class="score-fill" style="width:100%;background:var(--green)"></div></div></td></tr>
-        <tr><td>Écologie</td><td>100% <span class="badge green">✅</span></td><td><div class="score-bar"><div class="score-fill" style="width:100%;background:var(--green)"></div></div></td></tr>
-    </table>
-
-    <h3>Quiz 15/05/2026 : 33/38 (87%) 🎉</h3>
-    <div class="alert green">
-        <strong>5 erreurs corrigées :</strong> Beaufort 8 (coup de vent), Annexe >300m (repérage lumineux), Extincteurs (notice constructeur), ASN MMSI (automatique), Engin tracté
-    </div>
-
-    <h3>Quiz 17/05/2026 : ~35Q, 13 erreurs</h3>
-    <div class="alert yellow">
-        <strong>Points faibles identifiés :</strong> VHF (épave dérive=SÉCURITÉ, ASN 5min), RIPAM (sons chenal, voile vs moteur), Balisage (cardinales, eaux saines), Météo (Beaufort 10, mât signaux), Feux (&lt;7m), VNM (2M assis)
-    </div>
 </section>
 
 <footer style="text-align:center;padding:2rem 0;color:var(--text-muted);font-size:0.8rem;border-top:1px solid var(--border);">
