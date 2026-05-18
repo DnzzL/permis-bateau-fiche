@@ -527,11 +527,11 @@
         <div class="light-diagram">
             <div class="title">🎣 Chalutier (en action)</div>
             <div class="light-stack">
-                <div class="bulb r"></div>
+                <div class="bulb g"></div>
                 <div class="light-arrow">▲ au-dessus</div>
                 <div class="bulb w"></div>
             </div>
-            <div class="light-label">🔴 HAUT &nbsp; ⚪ BAS</div>
+            <div class="light-label">🟢 HAUT &nbsp; ⚪ BAS</div>
             <div class="hull-line"></div>
             <div class="light-label">Jour: 🔷🔷 2 cônes pointe ↓</div>
         </div>
@@ -542,16 +542,16 @@
             <div class="light-stack">
                 <div class="bulb r"></div>
                 <div class="light-arrow">▲ au-dessus</div>
-                <div class="bulb r"></div>
+                <div class="bulb w"></div>
             </div>
-            <div class="light-label">🔴🔴 2 rouges verticaux</div>
+            <div class="light-label">🔴⚪ Rouge HAUT + Blanc BAS</div>
             <div class="hull-line"></div>
             <div class="light-label">Jour: 🔷🔷 2 cônes pointe ↓</div>
         </div>
 
         <!-- Pas maître de sa manœuvre -->
         <div class="light-diagram" style="border-color: var(--yellow);">
-            <div class="title">🚑 Pas maître</div>
+            <div class="title">🚑 Pas maître ⚠️</div>
             <div class="light-stack">
                 <div class="bulb r"></div>
                 <div class="light-arrow">▲ au-dessus</div>
@@ -580,7 +580,7 @@
 
         <!-- Remorqueur >200m -->
         <div class="light-diagram" style="border-color: var(--yellow);">
-            <div class="title">🔗 Remorqueur (&gt;200m)</div>
+            <div class="title">🔗 Remorqueur (&gt;200m) ⚠️</div>
             <div class="light-stack">
                 <div class="bulb w"></div>
                 <div class="light-arrow">▲ mât</div>
@@ -588,7 +588,7 @@
                 <div class="light-arrow">▲ mât</div>
                 <div class="bulb w"></div>
             </div>
-            <div class="light-label">🔴🔴🔴 3 rouges verticaux</div>
+            <div class="light-label">⚪⚪⚪ 3 feux de mât blancs</div>
             <div class="hull-line"></div>
             <div class="light-label">Jour: ◆ 1 diamant noir</div>
             <div class="light-label" style="color:var(--text-muted);font-size:0.7rem">+ feux de côté + poupe</div>
@@ -664,11 +664,11 @@
 
     <div class="trap-box">
         <strong>⚠️ PIÈGES :</strong><br>
-        • <strong>Pas maître</strong> = 🔴⚪🔴 3 feux (PAS 🔴🔴 !) | jour = ⬛🔷⬛ boule-cylindre-boule<br>
+        • <strong>Pas maître</strong> = 🔴🔴 2 rouges (PAS 🔴⚪🔴 !) | jour = ⬛⬛ 2 boules<br>
         • <strong>Capacité restreinte</strong> = 🔴⚪🔴 3 feux | jour = ⬛◆⬛ boule-diamant-boule<br>
-        • Chalutier = 🔴 <strong>en haut</strong> + ⚪ bas (PAS 2 rouges !)<br>
-        • Pêche non-chalut = 🔴🔴 2 rouges (PAS rouge+blanc !)<br>
-        • Remorqueur &gt;200m = 🔴🔴🔴 3 rouges verticaux (PAS ⚪⚪⚪ blancs !) | jour = 🔷🔷🔷 3 cônes ↓<br>
+        • Chalutier = 🟢 <strong>en haut</strong> + ⚪ bas (PAS 🔴⚪ ni 🔴🔴 !)<br>
+        • Pêche non-chalut = 🔴⚪ rouge HAUT + blanc BAS (PAS 🔴🔴 !)<br>
+        • Remorqueur &gt;200m = ⚪⚪⚪ 3 feux de <strong>mât blancs</strong> (PAS rouges !) | jour = ◆ 1 diamant<br>
         • Rattrapant = voit feu de <strong>poupe blanc</strong> d'abord<br>
         • &lt;7m / &lt;7kt = minimum <strong>1 feu blanc</strong> (montrer à temps)<br>
         • Feu <strong>isophase</strong> = lumière = obscurité | <strong>Occultations</strong> = lumière &gt; obscurité | <strong>Éclats</strong> = lumière &lt; obscurité
@@ -715,10 +715,11 @@
         <h4>⚠️ Correction quiz #4 — Identification feux</h4>
         <p class="q">Comment distinguer un navire non maître, un chalutier et un remorqueur ?</p>
         <p class="a">
-        ✅ <strong>Non maître de sa manœuvre</strong> : 🔴⚪🔴 (rouge-blanc-rouge verticaux) + feux de côté + poupe si en marche. Jour : ⬛🔷⬛ boule-cylindre-boule.<br>
+        ✅ <strong>Non maître de sa manœuvre</strong> : 🔴🔴 (2 rouges verticaux) + feux de côté + poupe si en marche. Jour : ⬛⬛ 2 boules noires.<br>
         ✅ <strong>Capacité restreinte</strong> : 🔴⚪🔴 (rouge-blanc-rouge verticaux) + feux de mât/côtés/poupe si en marche. Jour : ⬛◆⬛ boule-diamant-boule.<br>
-        ✅ <strong>Chalutier en pêche</strong> : 🔴 en HAUT + ⚪ en BAS (2 feux verticaux) + feux de côté + poupe. Jour : 🔷🔷 2 cônes pointe vers le bas.<br>
-        ✅ <strong>Remorqueur (&lt;50m)</strong> : 2⚪ feux de mât + 🔴🟢 côtés + ⚪ poupe. Si remorque &gt;200m : <strong>3🔴</strong> feux rouges verticaux + 🔷🔷🔷 3 cônes pointe ↓.
+        ✅ <strong>Chalutier en pêche</strong> : 🟢 en HAUT + ⚪ en BAS (2 feux verticaux) + feux de côté + poupe. Jour : 🔷🔷 2 cônes pointe vers le bas.<br>
+        ✅ <strong>Pêche (non-chalut)</strong> : 🔴 en HAUT + ⚪ en BAS (2 feux verticaux) + feux de côté + poupe. Jour : 🔷🔷 2 cônes pointe vers le bas (sablier).<br>
+        ✅ <strong>Remorqueur (&lt;50m)</strong> : 2⚪ feux de mât + 🔴🟢 côtés + ⚪ poupe. Si remorque &gt;200m : <strong>3⚪</strong> feux de mât blancs + ◆ 1 diamant noir.
         </p>
     </div>
 
@@ -931,7 +932,7 @@
     <h3>Hiérarchie des privilèges (du + au -)</h3>
     <table>
         <tr><th>Rang</th><th>Navire</th><th>Marque/Feux</th></tr>
-        <tr><td>1️⃣</td><td><strong>Non maître de sa manœuvre</strong></td><td>🔴⚪🔴 + boule-cylindre-boule</td></tr>
+        <tr><td>1️⃣</td><td><strong>Non maître de sa manœuvre</strong></td><td>🔴🔴 + 2 boules noires</td></tr>
         <tr><td>2️⃣</td><td>Capacité restreinte</td><td>🔴⚪🔴 + boule-diamant-boule</td></tr>
         <tr><td>3️⃣</td><td>Navire en train de pêcher</td><td>🔴🔴 ou 🔴⚪ + 2 cônes ↓</td></tr>
         <tr><td>4️⃣</td><td>Voilier faisant route</td><td>🔴🟢 + ⚪</td></tr>
@@ -1251,11 +1252,11 @@
     </div>
 <div class="trap-box">
         <strong>🔴 Feux — Confusions fréquentes :</strong><br>
-        • <strong>Pas maître</strong> = 🔴⚪🔴 3 feux (≠ 🔴🔴 !) | jour = ⬛🔷⬛ boule-cylindre-boule<br>
+        • <strong>Pas maître</strong> = 🔴🔴 2 rouges (≠ 🔴⚪🔴 !) | jour = ⬛⬛ 2 boules<br>
         • <strong>Capacité restreinte</strong> = 🔴⚪🔴 3 feux | jour = ⬛◆⬛ boule-diamant-boule<br>
-        • Chalutier = 🔴<strong>en haut</strong> + ⚪ bas (≠ 2 rouges)<br>
-        • Pêche non-chalut = 🔴🔴 (≠ rouge+blanc)<br>
-        • Remorqueur &gt;200m = 🔴🔴🔴 3 rouges verticaux (≠ ⚪⚪⚪ blancs) | jour = 🔷🔷🔷 3 cônes ↓<br>
+        • Chalutier = 🟢<strong>en haut</strong> + ⚪ bas (≠ 🔴🔴 ni 🔴⚪ !)<br>
+        • Pêche non-chalut = 🔴⚪ rouge+blanc (≠ 🔴🔴 !)<br>
+        • Remorqueur &gt;200m = ⚪⚪⚪ 3 feux de <strong>mât blancs</strong> (≠ rouges) | jour = ◆ 1 diamant<br>
         • Rattrapant voit le feu de <strong>poupe blanc</strong> (pas les côtés)<br>
         • &lt;7m / &lt;7kt = minimum <strong>1 feu blanc</strong><br>
         • Secteur feu tribord = <strong>112,5°</strong> | poupe = <strong>135°</strong> | mât = <strong>225°</strong>
